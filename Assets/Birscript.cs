@@ -9,7 +9,6 @@ public class Birscript : MonoBehaviour
     public LogicManagerScript logic;
     public bool birdIsAlive = true;
     public float MaxValue = 15;
-    // public float MinValue = -50;
     public AudioSource PressFly;
 
     void Start()
@@ -17,8 +16,6 @@ public class Birscript : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManagerScript>();
 
     }
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive)
@@ -32,12 +29,6 @@ public class Birscript : MonoBehaviour
                 logic.gameOver();
                 birdIsAlive = false;
             }
-        /* else if (transform.position.y <= MinValue)
-            {
-            logic.gameOver();
-            birdIsAlive = false;
-        }
-        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

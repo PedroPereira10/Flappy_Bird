@@ -23,11 +23,15 @@ public class LogicManagerScript : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+        Debug.Log("Game restarted");
     }
 
     public void gameOver()
     {
+        Debug.Log("Restarting Game...");
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
         GameOverSound.Play();
     }
 }
